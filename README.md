@@ -1,4 +1,4 @@
-# hadoop
+# Hadoop
 Configuraciones, programas, ejemplos, ... relacionados con Hadoop
 
 ## Cluster Hadoop-Docker
@@ -15,9 +15,9 @@ Un ResourceManager (resourcemanager)
 Un NodeManager (nodemanager)
 
 ### Ejecución
-Arranque el cluster mediante `docker-compose -d up`
+Arranque el cluster mediante `docker-compose -d up` (debe estar en el mismo directorio que el archivo docker-compose.yml
 
-Esta parte puede demorar bastante hasta que se descarguen todas las imágenes y el sistema se estabilice.
+Esta parte puede demorar bastante hasta que se descarguen todas las imágenes y el sistema se estabilice
 
 Eventualmente, si ejecuta (en otro terminal) `docker ps`, los seis contenedores deberían indicar en su status `(healthy)`
 
@@ -25,7 +25,7 @@ Vamos a probar ahora con los ejemplos en https://repo1.maven.org/maven2/org/apac
 
 Cargue el archivo en el namenode (preferentemente) o el resourcemanager (en teoría cualquier nodo del cluster debería funcionar) `docker cp hadoop-mapreduce-examples-3.2.1.jar namenode:.`
 
-Para los datos, vamos a usar un pequeño archivo de texto (la Biblia en inglés) en el primer ejemplo `http://www.gutenberg.org/cache/epub/10/pg10.txt`
+Para los datos, vamos a usar un pequeño archivo de texto (la Biblia en inglés) en el primer ejemplo http://www.gutenberg.org/cache/epub/10/pg10.txt
 
 Cargue este archivo también en el namenode `docker cp pg10.txt namenode:.`
 
