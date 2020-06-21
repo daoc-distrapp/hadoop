@@ -29,6 +29,14 @@ Para los datos, vamos a usar un pequeño archivo de texto (la Biblia en inglés)
 
 Cargue este archivo también en el namenode `docker cp pg10.txt namenode:.`
 
-Vamos a crear un directorio en hdfs para subir nuestro archivo de texto `hdfs dfs -mkdir -p input`
+Ahora abrimos un terminal en el namenode `docker exec -it namenode bash`
 
-Pasemos ahora el archivo a hdfs `hdfs dfs -put pg10.txt input/`
+Vamos a crear un directorio en hdfs para subir el archivo de texto que queremos procesar `hdfs dfs -mkdir -p input`
+
+Pasemos ahora el archivo al directori input en hdfs `hdfs dfs -put pg10.txt input/`
+
+Ahora vamos a ejecutar el ejemplo wordcount, que contará cuántas veces aparece cada palabra en pg10.txt. El resultado se grabará en `output`, en el archivo `/user/root/output/part-r-00000`. Ejecutemos `hadoop jar hadoop-mapreduce-examples-3.2.1.jar wordcount input output` y esperemos que termine
+
+Podemos ver el contenido el archivo con el resultado `hdfs dfs -cat output/part-r-00000` y recuperarlo de hdfs copiándolo en el directorio local del contenedor `hdfs dfs -get output/part-r-00000`
+
+Ya podemos salir de namenode `exit` y recuperar el archivo con el resultado para analizarlo `docker cp namenode:/part-r-00000 .`
