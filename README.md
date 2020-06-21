@@ -40,3 +40,5 @@ Ahora vamos a ejecutar el ejemplo wordcount, que contará cuántas veces aparece
 Podemos ver el contenido del archivo con el resultado del conteo de palabras `hdfs dfs -cat output/part-r-00000` y recuperarlo de hdfs copiándolo en el directorio local del contenedor `hdfs dfs -get output/part-r-00000`
 
 Ya podemos salir de namenode `exit` y recuperar el archivo con el resultado para analizarlo `docker cp namenode:part-r-00000 .`
+
+Si desea puede finalizar la ejecución del cluster `docker-compose down`
