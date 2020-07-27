@@ -14,7 +14,9 @@ Un ResourceManager (resourcemanager)
 
 Un NodeManager (nodemanager)
 
-(NOTA: este docker-compose.yml es adaptado de https://github.com/big-data-europe/docker-hadoop; el archivo hadoop.env es tomado directamente de mismo sitio)
+Un HistoryServer (historyserver)
+
+(NOTA: este docker-compose.yml es tomado de https://github.com/big-data-europe/docker-hadoop; el archivo hadoop.env es también tomado del mismo sitio)
 
 ### Ejecución
 Arranque el cluster mediante `docker-compose -d up` (debe estar en el mismo directorio que el archivo docker-compose.yml
