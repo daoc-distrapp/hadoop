@@ -7,7 +7,9 @@ En el archivo docker-compose.yml se encuentra la configuración del cluster, el 
 ### HDFS
 Un NameNode (namenode)
 
-Tres DataNode (datanode1, datanode2, datanode3)
+Un DataNode (datanode1)
+
+<!-- Tres DataNode (datanode1, datanode2, datanode3) -->
 
 ### YARN
 Un ResourceManager (resourcemanager)
