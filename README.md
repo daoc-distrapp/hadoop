@@ -21,7 +21,7 @@ Un HistoryServer (historyserver)
 (NOTA: este docker-compose.yml es tomado de https://github.com/big-data-europe/docker-hadoop; el archivo hadoop.env es también tomado del mismo sitio)
 
 ### Ejecución
-Arranque el cluster mediante `docker-compose up` (debe estar en el mismo directorio que el archivo docker-compose.yml). Esta instrucción bloqueará el uso del terminal, así que abra uno nuevo para continuar.
+Arranque el cluster mediante `docker-compose up` (debe estar en el mismo directorio que el archivo docker-compose.yml). Esta instrucción bloqueará el uso del terminal, así que abra uno nuevo para continuar (si no desea que se bloquee el terminal puede usar: `docker-compose up -d`, lo cual ejecutará todo en el background).
 
 Esta parte puede demorar bastante hasta que se descarguen todas las imágenes y el sistema se estabilice
 
@@ -39,7 +39,7 @@ Ahora abrimos un terminal en el namenode `docker exec -it namenode bash`
 
 Vamos a crear un directorio en hdfs para subir el archivo de texto que queremos procesar `hdfs dfs -mkdir -p input`
 
-Pasemos ahora el archivo al directori input en hdfs `hdfs dfs -put pg10.txt input/`
+Pasemos ahora el archivo al directorio input en hdfs `hdfs dfs -put pg10.txt input/`
 
 Ahora vamos a ejecutar el ejemplo wordcount, que contará cuántas veces aparece cada palabra en pg10.txt. El resultado se grabará en `output`, en el archivo `part-r-00000`. Ejecutemos `hadoop jar hadoop-mapreduce-examples-3.2.1.jar wordcount input output` y esperemos que termine
 
@@ -47,4 +47,4 @@ Podemos ver el contenido del archivo con el resultado del conteo de palabras `hd
 
 Ya podemos salir de namenode `exit` y recuperar el archivo con el resultado para analizarlo `docker cp namenode:part-r-00000 .`
 
-Si desea puede finalizar la ejecución del cluster `docker-compose down`
+Si desea puede finalizar la ejecución del cluster: vaya al terminal donde inició docker-compose y oprima `Ctrl+C` ( o escriba `docker-compose down`, si ejecutó el sistema en el background).
