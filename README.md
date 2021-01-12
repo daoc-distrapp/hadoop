@@ -21,7 +21,7 @@ Un HistoryServer (historyserver)
 (NOTA: este docker-compose.yml es tomado de https://github.com/big-data-europe/docker-hadoop; el archivo hadoop.env es también tomado del mismo sitio)
 
 ### Ejecución
-Arranque el cluster mediante `docker-compose -d up` (debe estar en el mismo directorio que el archivo docker-compose.yml
+Arranque el cluster mediante `docker-compose up` (debe estar en el mismo directorio que el archivo docker-compose.yml). Esta instrucción bloqueará el uso del terminal, así que abra uno nuevo para continuar.
 
 Esta parte puede demorar bastante hasta que se descarguen todas las imágenes y el sistema se estabilice
 
